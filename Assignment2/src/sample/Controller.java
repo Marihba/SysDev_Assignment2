@@ -58,7 +58,6 @@ public class Controller {
         if(!serverFileL.getItems().contains(clientFileL.getSelectionModel().getSelectedItem()) && clientFileL.getSelectionModel().getSelectedItem() != null) {
             try {
                 PrintStream type = new PrintStream(clientSocket.getOutputStream());
-                type.println("uploadPress");
                 type.flush();
                 writeFile(clientFile + "/" + clientFileL.getSelectionModel().getSelectedItem());
             } catch (IOException e) {
